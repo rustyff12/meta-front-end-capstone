@@ -1,3 +1,131 @@
-h1 {
-	/* color: green; */
+:root {
+	/* Colors */
+	--clr-primary-1: #495e57;
+	--clr-primary-2: #f4ce14;
+	--clr-secondary-dark: #ee9972;
+	--clr-secondary-light: #fbdabb;
+	--clr-white: #edefee;
+	--clr-black: #333333;
+	--clr-black-light: #333333bf;
+}
+
+.specials-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, auto);
+	gap: 3rem;
+}
+
+.specials-header {
+	grid-column: 1 / -1;
+	grid-row: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.875rem;
+}
+
+.specials-header h2 {
+	line-height: 1;
+	font-family: "Markazi Text", serif;
+	font-size: 2.5rem;
+}
+
+.specials-header .btn {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	border-radius: 2rem;
+	background-color: var(--clr-primary-2);
+	color: var(--clr-black);
+	font-weight: bold;
+	border: 2px solid var(--clr-primary-2);
+	transition: background, border, color 0.7s;
+}
+
+.specials-header .btn:hover {
+	background-color: var(--clr-primary-1);
+	color: var(--clr-primary-2);
+}
+
+/*** Item Card  ***/
+.item-card {
+	grid-row: auto;
+	grid-column: auto;
+	min-height: 31.25rem;
+	padding-bottom: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1rem;
+	overflow: hidden;
+	background-color: var(--clr-white);
+}
+
+.item-card-image img {
+	height: 12.5rem;
+	width: 100%;
+	object-fit: cover;
+	margin-bottom: 0.9rem;
+}
+
+.item-card-header,
+.item-card-footer {
+	padding: 0rem 1.25rem;
+}
+
+.item-card-header {
+	display: flex;
+	gap: 1.25rem;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.875rem;
+}
+
+.item-card-header h3 {
+	font-size: 1.15rem;
+}
+
+.item-card-header span {
+	font-weight: 700;
+	color: var(--clr-secondary-dark);
+}
+
+.item-card-footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.item-card-footer a {
+	font-weight: 700;
+}
+
+.item-card-footer a span {
+	margin-left: 1rem;
+}
+
+/* 481px — 768px: iPads, Tablets */
+@media screen and (min-width: 480px) {
+	.specials-header {
+		flex-direction: row;
+	}
+}
+
+/* 1025px — 1200px: Desktops, large screens */
+@media screen and (min-width: 1024px) {
+	.specials-grid {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto;
+		gap: 1.25rem;
+	}
+
+	.item-card {
+		grid-row: 2;
+	}
+}
+*,
+*::before,
+*::after {
+	/* border: 1px solid red; */
 }
