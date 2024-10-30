@@ -1,0 +1,97 @@
+:root {
+	/* Colors */
+	--clr-primary-1: #495e57;
+	--clr-primary-2: #f4ce14;
+	--clr-secondary-dark: #ee9972;
+	--clr-secondary-light: #fbdabb;
+	--clr-white: #edefee;
+	--clr-black: #333333;
+	--clr-black-light: #333333bf;
+
+	/* Fonts */
+	--ff-main: "Markazi Text", serif;
+	--ff-secondary: "Karla", sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+	padding-top: 1.875rem;
+	background-color: var(--clr-primary-1);
+}
+
+.hero-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	gap: 3.5rem;
+	margin-bottom: 9.375rem;
+}
+
+.hero-text {
+	grid-row: 1;
+}
+
+.hero-image {
+	width: 100%;
+	height: 24rem;
+	margin-bottom: -4.375rem;
+	justify-self: end;
+	border-radius: 16px;
+	object-fit: cover;
+}
+
+.hero-text h1,
+.hero-text h2 {
+	font-family: "Markazi Text";
+	line-height: 0.1;
+}
+
+.hero-text h1 {
+	color: var(--clr-primary-2);
+	font-size: 3.5rem;
+}
+
+.hero-text h2 {
+	color: var(--clr-white);
+	font-size: 2.5rem;
+	/* margin-bottom: 1.5rem; */
+}
+
+.hero-text p {
+	color: var(--clr-white);
+	width: 35ch;
+}
+
+.hero-text .btn {
+	display: inline-block;
+	margin-top: 2rem;
+	padding: 0.5rem 1rem;
+	border-radius: 2rem;
+	background-color: var(--clr-primary-2);
+	color: var(--clr-black);
+	font-weight: bold;
+	border: 2px solid var(--clr-primary-2);
+	transition: background, border, color 0.7s;
+}
+
+.hero-text .btn:hover {
+	background-color: var(--clr-primary-1);
+	color: var(--clr-primary-2);
+}
+
+@media only screen and (min-width: 768px) {
+	.hero-container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	.hero-text {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.hero-image {
+		grid-column: 2;
+		justify-self: center;
+	}
+}

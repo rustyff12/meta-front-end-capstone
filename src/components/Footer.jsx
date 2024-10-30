@@ -48,13 +48,13 @@ export default function Footer() {
 				<div className="footer-contact">
 					<h4>Contact Us</h4>
 					<ul>
-						<li>
+						<li className="footer-address">
 							<FontAwesomeIcon icon={faEnvelope} size="lg" />
-							<span>
-								555 Main Street,
-								<br /> Chicago,
-								<br /> IL 55555
-							</span>
+							<div className="address-link">
+								555 Main Street, <br />
+								Chicago, IL <br />
+								55555
+							</div>
 						</li>
 						<li>
 							<FontAwesomeIcon icon={faLocationDot} size="lg" />

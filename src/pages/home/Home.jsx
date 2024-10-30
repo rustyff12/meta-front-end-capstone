@@ -1,7 +1,12 @@
+import Hero from "./Hero";
+import Specials from "./Specials";
+import Testimonials from "./Testimonials";
 export default function Home() {
 	return (
-		<div>
-			<h1>Home Page</h1>
-		</div>
+		<>
+			<Hero />
+			<Specials />
+			<Testimonials />
+		</>
 	);
 }

@@ -23,7 +23,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #fff7ed;
-	font-family: "Inter", sans-serif;
+	font-family: "Karla", sans-serif;
 }
 
 a {
@@ -41,7 +41,19 @@ body {
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1100px;
 	width: 90%;
 	margin: 0 auto;
+}
+
+/* 1025px — 1200px: Desktops, large screens */
+@media screen and (min-width: 768px) {
+	.container {
+		width: 80%;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.container {
+		width: 70%;
+	}
 }
