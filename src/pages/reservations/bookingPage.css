@@ -1,0 +1,42 @@
+:root {
+	/* Colors */
+	--clr-primary-1: #495e57;
+	--clr-primary-2: #f4ce14;
+	--clr-secondary-dark: #ee9972;
+	--clr-secondary-light: #fbdabb;
+	--clr-white: #edefee;
+	--clr-black: #333333;
+	--clr-black-light: #333333bf;
+
+	/* Fonts */
+	--ff-main: "Markazi Text", serif;
+	--ff-secondary: "Karla", sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.form-container {
+	background-color: red;
+	height: 100dvh;
+	padding-top: 2rem;
+	background-color: var(--clr-primary-1);
+	margin-bottom: 9.375rem;
+	border-radius: 16px;
+	/* display: grid; */
+	padding: 1rem;
+	overflow: hidden;
+	/* position: relative; */
+}
+
+/* form {
+	background-color: var(--clr-white);
+	border-radius: 16px;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.form-element {
+	display: flex;
+	flex-direction: column;
+} */

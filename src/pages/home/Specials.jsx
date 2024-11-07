@@ -25,7 +25,7 @@ export default function Specials() {
 						</div>
 						<div className="item-card-footer">
 							<p>{item.description}</p>
-							<Link to="">
+							<Link to="/order-online">
 								Order a delivery{" "}
 								<span>
 									<FontAwesomeIcon icon={faMotorcycle} />
@@ -38,22 +38,3 @@ export default function Specials() {
 		</section>
 	);
 }
-
-/* 
-
-<article className="item-card">
-				<div className="item-card-image">
-					<img src={item.image} alt={item.name} />
-				</div>
-				<div className="item-card-header">
-					<h3>{item.name}</h3>
-					<span>{item.price}</span>
-				</div>
-				<div className="item-card-footer">
-					<p>{item.description}</p>
-					<Link to="">
-						Order a delivery <FontAwesomeIcon icon={faMotorcycle} />
-					</Link>
-				</div>
-			</article>
-*/

@@ -7,7 +7,7 @@ import {
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Menu from "./pages/menu/Menu";
-import Reservations from "./pages/reservations/Reservations";
+import BookingPage from "./pages/reservations/BookingPage";
 import OrderOnline from "./pages/order-online/OrderOnline";
 import Login from "./pages/login/Login";
 import Layout from "./components/Layout";
@@ -18,7 +18,7 @@ const router = createBrowserRouter(
 			<Route index element={<Home />} />
 			<Route path="about" element={<About />} />
 			<Route path="menu" element={<Menu />} />
-			<Route path="reservations" element={<Reservations />} />
+			<Route path="reservations" element={<BookingPage />} />
 			<Route path="order-online" element={<OrderOnline />} />
 			<Route path="login" element={<Login />} />
 		</Route>
