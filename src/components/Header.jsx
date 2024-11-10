@@ -20,6 +20,7 @@ export default function Header() {
 				<button
 					className="nav-menu-hamburger"
 					type="button"
+					aria-label="menu"
 					onClick={() => setIsMenuOpen(!isMenuOpen)}>
 					{isMenuOpen ? (
 						<FontAwesomeIcon icon={faXmark} size="2x" />

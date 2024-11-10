@@ -1,38 +1,46 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import BookingPageOne from "./BookingPageOne";
-import BookingPageTwo from "./BookingPageTwo";
-import "./bookingPage.css";
+import { useReducer, useState } from "react";
+import BookingForm from "./BookingForm";
 export default function BookingPage() {
-	const [currentStep, setCurrentStep] = useState(1);
-	// console.log(currentStep);
-	return (
-		<div className="container form-container">
-			<AnimatePresence mode="wait">
-				{currentStep === 1 && (
-					<motion.div
-						key="step1"
-						initial={{ x: -100, opacity: 0 }}
-						animate={{ x: 0, opacity: 1 }}
-						exit={{ x: 100, opacity: 0 }}
-						transition={{ duration: 0.5 }}>
-						<BookingPageOne />
-					</motion.div>
-				)}
+	const initialFormData = {
+		date: "",
+		time: "",
+		guests: 1,
+		occasion: "",
+		requests: "",
+	};
+	const [formData, setFormData] = useState(initialFormData);
 
-				{currentStep === 2 && (
-					<motion.div
-						key="step2"
-						initial={{ x: 100, opacity: 0 }}
-						animate={{ x: 0, opacity: 1 }}
-						exit={{ x: -100, opacity: 0 }}
-						transition={{ duration: 0.5 }}>
-						<BookingPageTwo />
-					</motion.div>
-				)}
-			</AnimatePresence>
-			<button onClick={() => setCurrentStep(1)}>One</button>
-			<button onClick={() => setCurrentStep(2)}>Two</button>
+	function updateTimes(state, action) {
+		return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+	}
+
+	function initializeTimes() {
+		return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+	}
+
+	const [availableTimes, dispatch] = useReducer(
+		updateTimes,
+		[],
+		initializeTimes
+	);
+
+	function updateFormData(newData) {
+		setFormData((prevData) => ({ ...prevData, ...newData }));
+	}
+
+	function clearForm() {
+		setFormData(initialFormData);
+	}
+
+	return (
+		<div className="form-main">
+			<BookingForm
+				formData={formData}
+				setFormData={updateFormData}
+				availableTimes={availableTimes}
+				dispatch={dispatch}
+				clearForm={clearForm}
+			/>
 		</div>
 	);
 }

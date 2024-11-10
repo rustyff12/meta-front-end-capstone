@@ -16,6 +16,7 @@
 
 * {
 	box-sizing: border-box;
+	/* border: 1px solid red; */
 }
 
 html,
@@ -45,6 +46,23 @@ body {
 	max-width: 1100px;
 	width: 90%;
 	margin: 0 auto;
+}
+
+.btn {
+	display: inline-block;
+	margin-top: 2rem;
+	padding: 0.5rem 1rem;
+	border-radius: 2rem;
+	background-color: var(--clr-primary-2);
+	color: var(--clr-black);
+	font-weight: bold;
+	border: 2px solid var(--clr-primary-2);
+	transition: background, border, color 0.7s;
+}
+
+.btn:hover {
+	background-color: var(--clr-primary-1);
+	color: var(--clr-primary-2);
 }
 
 /* 1025px — 1200px: Desktops, large screens */

@@ -14,29 +14,6 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.form-container {
-	background-color: red;
-	height: 100dvh;
-	padding-top: 2rem;
+.form-main {
 	background-color: var(--clr-primary-1);
-	margin-bottom: 9.375rem;
-	border-radius: 16px;
-	/* display: grid; */
-	padding: 1rem;
-	overflow: hidden;
-	/* position: relative; */
 }
-
-/* form {
-	background-color: var(--clr-white);
-	border-radius: 16px;
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-}
-
-.form-element {
-	display: flex;
-	flex-direction: column;
-} */
