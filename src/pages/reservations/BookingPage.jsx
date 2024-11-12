@@ -2,7 +2,7 @@ import { useReducer, useState } from "react";
 import BookingForm from "./BookingForm";
 import { fetchAPI, submitAPI } from "../../utils/mockAPI";
 import { useNavigate } from "react-router-dom";
-
+import "./bookingPage.css";
 export function updateTimes(state, action) {
 	if (action.type === "update_times") {
 		const availableTimes = fetchAPI(action.date);
@@ -53,14 +53,16 @@ export default function BookingPage() {
 
 	return (
 		<div className="form-main">
-			<BookingForm
-				formData={formData}
-				setFormData={updateFormData}
-				availableTimes={availableTimes}
-				dispatch={dispatch}
-				clearForm={clearForm}
-				submitForm={submitForm}
-			/>
+			<div className="container">
+				<BookingForm
+					formData={formData}
+					setFormData={updateFormData}
+					availableTimes={availableTimes}
+					dispatch={dispatch}
+					clearForm={clearForm}
+					submitForm={submitForm}
+				/>
+			</div>
 		</div>
 	);
 }

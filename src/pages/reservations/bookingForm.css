@@ -3,6 +3,8 @@
 	padding: 2rem;
 	padding-inline: 1rem;
 	background-color: var(--clr-primary-1);
+	max-width: 900px;
+	margin: 0 auto;
 }
 
 .form-section-header {
@@ -35,7 +37,7 @@
 
 .form-element > input,
 .form-element > select {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: var(--clr-primary-1);
 	border-radius: 10px;
 	border: none;
@@ -44,6 +46,7 @@
 }
 
 .form-occasion > label {
+	font-size: 1.5rem;
 	display: flex;
 	justify-content: space-between;
 	padding-right: 1rem;
@@ -68,7 +71,8 @@
 	gap: 1rem;
 	padding: 2rem 1.5rem;
 	width: 100%;
-	border-bottom: 2px solid var(--clr-white);
+	max-width: 500px;
+	margin: 0 auto;
 }
 
 .button-container > .btn {
@@ -133,6 +137,12 @@ select:focus[aria-invalid="true"] + .description {
 	border: none;
 }
 
+input:focus,
+select:focus {
+	outline: 3px solid var(--clr-secondary-dark);
+	/* background-color: var(--clr-primary-2); */
+}
+
 @media screen and (max-width: 450px) {
 	.form-element > label {
 		font-size: 1.3rem;
@@ -141,5 +151,11 @@ select:focus[aria-invalid="true"] + .description {
 	.form-element > input,
 	.form-element > select {
 		font-size: 1.3rem;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.form-container {
+		/* background-color: red; */
 	}
 }

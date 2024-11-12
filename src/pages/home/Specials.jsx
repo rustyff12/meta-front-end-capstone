@@ -1,7 +1,7 @@
 import { faMotorcycle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { meals } from "./specialsData";
+import { meals } from "../../utils/specialsData";
 import "./styles/specials.css";
 
 export default function Specials() {

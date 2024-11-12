@@ -1,0 +1,68 @@
+:root {
+	/* Colors */
+	--clr-primary-1: #495e57;
+	--clr-primary-2: #f4ce14;
+	--clr-secondary-dark: #ee9972;
+	--clr-secondary-light: #fbdabb;
+	--clr-white: #edefee;
+	--clr-black: #333333;
+	--clr-black-light: #333333bf;
+
+	/* Fonts */
+	--ff-main: "Markazi Text", serif;
+	--ff-secondary: "Karla", sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+}
+.about-us {
+	margin-bottom: 2rem;
+}
+
+.about-us-content {
+	display: grid;
+}
+
+.about-us h2,
+.about-us h3 {
+	font-family: "Markazi Text";
+	line-height: 0.1;
+}
+
+.about-us h2 {
+	color: var(--clr-primary-2);
+	font-size: 3.5rem;
+	padding-top: 1.5rem;
+}
+
+.about-us h3 {
+	color: var(--clr-primary-1);
+	font-size: 2.5rem;
+}
+
+.about-us-content img {
+	width: 100%;
+	border-radius: 16px;
+	border: 2px solid var(--clr-black);
+}
+
+@media screen and (min-width: 820px) {
+	.about-us-content {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	.about-text-first {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.about-text-second {
+		grid-area: 2 / 2 / 3 / 3;
+	}
+
+	.about-image-first {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.about-image-second {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+}

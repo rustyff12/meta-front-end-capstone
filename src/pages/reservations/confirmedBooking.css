@@ -1,19 +1,46 @@
-:root {
-	/* Colors */
-	--clr-primary-1: #495e57;
-	--clr-primary-2: #f4ce14;
-	--clr-secondary-dark: #ee9972;
-	--clr-secondary-light: #fbdabb;
-	--clr-white: #edefee;
-	--clr-black: #333333;
-	--clr-black-light: #333333bf;
-
-	/* Fonts */
-	--ff-main: "Markazi Text", serif;
-	--ff-secondary: "Karla", sans-serif;
-	-moz-osx-font-smoothing: grayscale;
+.confirmed-booking {
+	min-height: 100dvh;
+	padding: 2rem;
+	padding-inline: 1rem;
+	background-color: var(--clr-primary-1);
+	/* max-width: 900px; */
+	margin: 0 auto;
 }
 
-.confirmed-booking {
-	color: red;
+.confirmed-header,
+.confirmed-booking h2 {
+	font-family: var(--ff-main);
+	line-height: 0.1;
+}
+
+.confirmed-header {
+	color: var(--clr-primary-2);
+	font-size: 3.5rem;
+	margin-top: 2rem;
+}
+
+.confirmed-booking h2 {
+	color: var(--clr-white);
+	font-size: 2.5rem;
+}
+
+.confirm-card {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.confirm-card p {
+	font-family: var(--ff-secondary);
+	color: var(--clr-white);
+}
+
+.confirm-card p > span {
+	font-weight: 700;
+	color: var(--clr-primary-2);
+}
+
+@media screen and (max-width: 500px) {
+	.confirmed-header {
+		line-height: 1;
+	}
 }
