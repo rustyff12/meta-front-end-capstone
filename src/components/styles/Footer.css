@@ -2,6 +2,7 @@
 	background-color: var(--clr-primary-1);
 	color: var(--clr-white);
 	width: 100%;
+	border-top: 2px solid var(--clr-black);
 }
 
 .footer-grid {

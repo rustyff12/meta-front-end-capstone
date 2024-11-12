@@ -9,6 +9,7 @@ export default function BookingForm({
 	availableTimes,
 	dispatch,
 	clearForm,
+	submitForm,
 }) {
 	const [hasVisited, setHasVisited] = useState({ date: false, time: false });
 	const [isFormValid, setIsFormValid] = useState(false);
@@ -26,7 +27,7 @@ export default function BookingForm({
 		});
 
 		if (name === "date") {
-			dispatch({ type: "update_times", date: value });
+			dispatch({ type: "update_times", date: new Date(value) });
 		}
 	}
 
@@ -40,7 +41,7 @@ export default function BookingForm({
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log(formData);
+		submitForm(formData);
 	}
 
 	return (
@@ -69,7 +70,7 @@ export default function BookingForm({
 					)}
 				</div>
 				<div className="form-element form-time">
-					<label htmlFor="time">Choose Time</label>
+					<label htmlFor="time">Pick A Time</label>
 					<select
 						name="time"
 						id="time"
@@ -78,11 +79,11 @@ export default function BookingForm({
 						value={formData.time}
 						required
 						aria-invalid={
-							hasVisited.time && !formData.time ? "true" : "false"
+							hasVisited && !formData.time ? "true" : "false"
 						}
 						aria-describedby="time-description">
 						<option value="">Please pick a time</option>
-						{availableTimes.map((time, index) => {
+						{(availableTimes || []).map((time, index) => {
 							return (
 								<option value={time} key={index}>
 									{time}
@@ -97,7 +98,7 @@ export default function BookingForm({
 					)}
 				</div>
 				<div className="form-element form-guests">
-					<label htmlFor="guests">Number of Guests</label>
+					<label htmlFor="guests">Number Of Guests</label>
 					<input
 						type="number"
 						name="guests"

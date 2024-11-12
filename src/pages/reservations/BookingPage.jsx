@@ -1,5 +1,21 @@
 import { useReducer, useState } from "react";
 import BookingForm from "./BookingForm";
+import { fetchAPI, submitAPI } from "../../utils/mockAPI";
+import { useNavigate } from "react-router-dom";
+
+export function updateTimes(state, action) {
+	if (action.type === "update_times") {
+		const availableTimes = fetchAPI(action.date);
+		return availableTimes;
+	}
+	return state;
+}
+
+export function initializeTimes() {
+	const initialTimes = fetchAPI(new Date());
+	return initialTimes;
+}
+
 export default function BookingPage() {
 	const initialFormData = {
 		date: "",
@@ -9,20 +25,23 @@ export default function BookingPage() {
 		requests: "",
 	};
 	const [formData, setFormData] = useState(initialFormData);
-
-	function updateTimes(state, action) {
-		return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-	}
-
-	function initializeTimes() {
-		return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-	}
+	const navigate = useNavigate();
 
 	const [availableTimes, dispatch] = useReducer(
 		updateTimes,
 		[],
 		initializeTimes
 	);
+
+	function submitForm(formData) {
+		localStorage.setItem("bookingData", JSON.stringify(formData));
+
+		const storedData = localStorage.getItem("bookingData");
+		const successful = storedData !== null;
+		if (successful) {
+			navigate("/reservations/confirmed");
+		}
+	}
 
 	function updateFormData(newData) {
 		setFormData((prevData) => ({ ...prevData, ...newData }));
@@ -40,6 +59,7 @@ export default function BookingPage() {
 				availableTimes={availableTimes}
 				dispatch={dispatch}
 				clearForm={clearForm}
+				submitForm={submitForm}
 			/>
 		</div>
 	);
