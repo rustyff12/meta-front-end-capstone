@@ -26,22 +26,34 @@ export default function Footer() {
 					<h4>Links</h4>
 					<ul>
 						<li>
-							<Link to="/">Home</Link>
+							<Link to="/" aria-label="Home">
+								Home
+							</Link>
 						</li>
 						<li>
-							<Link to="/about">About</Link>
+							<Link to="/about" aria-label="About">
+								About
+							</Link>
 						</li>
 						<li>
-							<Link to="/menu">Menu</Link>
+							<Link to="/menu" aria-label="Menu">
+								Menu
+							</Link>
 						</li>
 						<li>
-							<Link to="/reservations">Reservations</Link>
+							<Link to="/reservations" aria-label="Reservations">
+								Reservations
+							</Link>
 						</li>
 						<li>
-							<Link to="/order-online">Order Online</Link>
+							<Link to="/order-online" aria-label="Order online">
+								Order Online
+							</Link>
 						</li>
 						<li>
-							<Link to="/login">Login</Link>
+							<Link to="/login" aria-label="login">
+								Login
+							</Link>
 						</li>
 					</ul>
 				</nav>
@@ -49,7 +61,11 @@ export default function Footer() {
 					<h4>Contact Us</h4>
 					<ul>
 						<li className="footer-address">
-							<FontAwesomeIcon icon={faLocationDot} size="lg" />
+							<FontAwesomeIcon
+								icon={faLocationDot}
+								size="lg"
+								aria-hidden="true"
+							/>
 
 							<div className="address-link">
 								555 Main Street, <br />
@@ -58,11 +74,19 @@ export default function Footer() {
 							</div>
 						</li>
 						<li>
-							<FontAwesomeIcon icon={faPhone} size="lg" />
+							<FontAwesomeIcon
+								icon={faPhone}
+								size="lg"
+								aria-hidden="true"
+							/>
 							<span>(555) 555-5555</span>
 						</li>
 						<li>
-							<FontAwesomeIcon icon={faEnvelope} size="lg" />
+							<FontAwesomeIcon
+								icon={faEnvelope}
+								size="lg"
+								aria-hidden="true"
+							/>
 							<span>service@l_lemon.com</span>
 						</li>
 					</ul>
@@ -71,28 +95,54 @@ export default function Footer() {
 					<h4>Social Media</h4>
 					<ul>
 						<li>
-							<Link to="https://www.facebook.com" target="_blank">
-								<FontAwesomeIcon icon={faFacebook} size="lg" />
+							<Link
+								to="https://www.facebook.com"
+								target="_blank"
+								aria-label="Visit our Facebook page">
+								<FontAwesomeIcon
+									icon={faFacebook}
+									size="lg"
+									aria-hidden="true"
+								/>
 								<span>Facebook</span>
 							</Link>
 						</li>
 						<li>
-							<Link to="https://www.twitter.com" target="_blank">
-								<FontAwesomeIcon icon={faTwitter} size="lg" />
+							<Link
+								to="https://www.twitter.com"
+								target="_blank"
+								aria-label="Visit our Twitter page">
+								<FontAwesomeIcon
+									icon={faTwitter}
+									size="lg"
+									aria-hidden="true"
+								/>
 								<span>Twitter</span>
 							</Link>
 						</li>
 						<li>
 							<Link
 								to="https://www.instagram.com"
-								target="_blank">
-								<FontAwesomeIcon icon={faInstagram} size="lg" />
+								target="_blank"
+								aria-label="Visit our Instagram page">
+								<FontAwesomeIcon
+									icon={faInstagram}
+									size="lg"
+									aria-hidden="true"
+								/>
 								<span>Instagram</span>
 							</Link>
 						</li>
 						<li>
-							<Link to="https://www.youtube.com" target="_blank">
-								<FontAwesomeIcon icon={faYoutube} size="lg" />
+							<Link
+								to="https://www.youtube.com"
+								target="_blank"
+								aria-label="Visit our Youtube page">
+								<FontAwesomeIcon
+									icon={faYoutube}
+									size="lg"
+									aria-hidden="true"
+								/>
 								<span>YouTube</span>
 							</Link>
 						</li>

@@ -28,7 +28,10 @@ export default function Specials() {
 							<Link to="/order-online">
 								Order a delivery{" "}
 								<span>
-									<FontAwesomeIcon icon={faMotorcycle} />
+									<FontAwesomeIcon
+										icon={faMotorcycle}
+										aria-hidden="true"
+									/>
 								</span>
 							</Link>
 						</div>

@@ -11,7 +11,7 @@ export default function Header() {
 	return (
 		<header>
 			<nav className="container nav-bar">
-				<Link className="nav-bar-logo" to="/">
+				<Link className="nav-bar-logo" to="/" aria-label="home">
 					<img
 						src={logoImg}
 						alt="Little Lemon Restaurant Logo + home link"
@@ -20,7 +20,9 @@ export default function Header() {
 				<button
 					className="nav-menu-hamburger"
 					type="button"
-					aria-label="menu"
+					aria-label="menu button"
+					aria-expanded={!isMenuOpen ? `false` : `true`}
+					aria-haspopup="true"
 					onClick={() => setIsMenuOpen(!isMenuOpen)}>
 					{isMenuOpen ? (
 						<FontAwesomeIcon icon={faXmark} size="2x" />
@@ -40,7 +42,11 @@ export default function Header() {
 							className={
 								pathname === "/" ? "current-location" : ""
 							}
-							to="/">
+							to="/"
+							aria-label="Home"
+							aria-current={
+								pathname === "/" ? "page" : undefined
+							}>
 							Home
 						</NavLink>
 					</li>
@@ -49,7 +55,11 @@ export default function Header() {
 							className={
 								pathname === "/about" ? "current-location" : ""
 							}
-							to="/about">
+							to="/about"
+							aria-label="About"
+							aria-current={
+								pathname === "/about" ? "page" : undefined
+							}>
 							About
 						</NavLink>
 					</li>
@@ -58,7 +68,11 @@ export default function Header() {
 							className={
 								pathname === "/menu" ? "current-location" : ""
 							}
-							to="/menu">
+							to="/menu"
+							aria-label="Menu"
+							aria-current={
+								pathname === "/menu" ? "page" : undefined
+							}>
 							Menu
 						</NavLink>
 					</li>
@@ -69,7 +83,13 @@ export default function Header() {
 									? "current-location"
 									: ""
 							}
-							to="/reservations">
+							to="/reservations"
+							aria-label="Reservations"
+							aria-current={
+								pathname === "/reservations"
+									? "page"
+									: undefined
+							}>
 							Reservations
 						</NavLink>
 					</li>
@@ -80,7 +100,13 @@ export default function Header() {
 									? "current-location"
 									: ""
 							}
-							to="/order-online">
+							to="/order-online"
+							aria-label="Order online"
+							aria-current={
+								pathname === "/order-online"
+									? "page"
+									: undefined
+							}>
 							Order Online
 						</NavLink>
 					</li>
@@ -89,7 +115,11 @@ export default function Header() {
 							className={
 								pathname === "/login" ? "current-location" : ""
 							}
-							to="/login">
+							to="/login"
+							aria-label="login"
+							aria-current={
+								pathname === "/login" ? "page" : undefined
+							}>
 							Login
 						</NavLink>
 					</li>
