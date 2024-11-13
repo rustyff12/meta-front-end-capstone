@@ -110,7 +110,7 @@ describe("Renders alements on the page", () => {
 	});
 });
 
-describe("Required and button disabled checks", () => {
+describe("Required and validation checks", () => {
 	beforeEach(() => {
 		mockSetFormData.mockClear();
 	});
@@ -155,20 +155,6 @@ describe("Required and button disabled checks", () => {
 
 		const guestsInput = screen.getByLabelText("Number Of Guests");
 		expect(guestsInput).toHaveAttribute("required");
-	});
-
-	test("Submit button is disabled until form is valid", () => {
-		render(
-			<MemoryRouter>
-				<BookingForm
-					formData={mockFormData}
-					setFormData={mockSetFormData}
-				/>
-			</MemoryRouter>
-		);
-
-		const submitButton = screen.getByText("Submit");
-		expect(submitButton).toHaveAttribute("disabled");
 	});
 });
 

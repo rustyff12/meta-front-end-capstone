@@ -49,7 +49,8 @@ export default function Footer() {
 					<h4>Contact Us</h4>
 					<ul>
 						<li className="footer-address">
-							<FontAwesomeIcon icon={faEnvelope} size="lg" />
+							<FontAwesomeIcon icon={faLocationDot} size="lg" />
+
 							<div className="address-link">
 								555 Main Street, <br />
 								Chicago, IL <br />
@@ -57,12 +58,12 @@ export default function Footer() {
 							</div>
 						</li>
 						<li>
-							<FontAwesomeIcon icon={faLocationDot} size="lg" />
+							<FontAwesomeIcon icon={faPhone} size="lg" />
 							<span>(555) 555-5555</span>
 						</li>
 						<li>
-							<FontAwesomeIcon icon={faPhone} size="lg" />
-							<span>service@littlelemon.com</span>
+							<FontAwesomeIcon icon={faEnvelope} size="lg" />
+							<span>service@l_lemon.com</span>
 						</li>
 					</ul>
 				</div>
@@ -70,25 +71,27 @@ export default function Footer() {
 					<h4>Social Media</h4>
 					<ul>
 						<li>
-							<Link to="https://www.facebook.com">
+							<Link to="https://www.facebook.com" target="_blank">
 								<FontAwesomeIcon icon={faFacebook} size="lg" />
 								<span>Facebook</span>
 							</Link>
 						</li>
 						<li>
-							<Link to="https://www.twitter.com">
+							<Link to="https://www.twitter.com" target="_blank">
 								<FontAwesomeIcon icon={faTwitter} size="lg" />
 								<span>Twitter</span>
 							</Link>
 						</li>
 						<li>
-							<Link to="https://www.instagram.com">
+							<Link
+								to="https://www.instagram.com"
+								target="_blank">
 								<FontAwesomeIcon icon={faInstagram} size="lg" />
 								<span>Instagram</span>
 							</Link>
 						</li>
 						<li>
-							<Link to="https://www.youtube.com">
+							<Link to="https://www.youtube.com" target="_blank">
 								<FontAwesomeIcon icon={faYoutube} size="lg" />
 								<span>YouTube</span>
 							</Link>

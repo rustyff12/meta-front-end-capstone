@@ -16,7 +16,6 @@
 
 * {
 	box-sizing: border-box;
-	/* border: 1px solid red; */
 }
 
 html,
@@ -25,7 +24,6 @@ body {
 	padding: 0;
 	background-color: #fff7ed;
 	font-family: "Karla", sans-serif;
-	/* background-color: var(--clr-black); */
 }
 
 a {
@@ -59,7 +57,6 @@ body {
 	transition: background, border, color 0.7s;
 }
 
-/* 1025px — 1200px: Desktops, large screens */
 @media screen and (min-width: 768px) {
 	.container {
 		width: 80%;

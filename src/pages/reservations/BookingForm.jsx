@@ -41,7 +41,23 @@ export default function BookingForm({
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		submitForm(formData);
+
+		if (formData.guests > 12) {
+			return;
+		}
+
+		const isDateValid = !!formData.date;
+		const isTimeValid = !!formData.time;
+
+		setHasVisited((prev) => ({
+			...prev,
+			date: !isDateValid || prev.date,
+			time: !isTimeValid || prev.time,
+		}));
+
+		if (isDateValid && isTimeValid) {
+			submitForm(formData);
+		}
 	}
 
 	return (
@@ -112,9 +128,11 @@ export default function BookingForm({
 						aria-required="true"
 						aria-describedby="guests-description"
 					/>
-					<p id="guests-description" className="visually-hidden">
-						* Please enter the number of guests, from 1 to 12.
-					</p>
+					{formData.guests > 12 && (
+						<p id="guests-description" className="description">
+							* Please enter the number of guests, from 1 to 12.
+						</p>
+					)}
 				</div>
 				<div className="form-element form-occasion">
 					<label htmlFor="occasion">
@@ -144,6 +162,8 @@ export default function BookingForm({
 						onChange={handleChange}
 						name="requests"
 						id="requests"
+						rows={5}
+						cols={35}
 						aria-describedby="requests-description"
 					/>
 					<p id="requests-description" className="visually-hidden">
@@ -162,7 +182,7 @@ export default function BookingForm({
 					className="btn"
 					type="submit"
 					onClick={handleSubmit}
-					disabled={!isFormValid}
+					// disabled={!isFormValid}
 					aria-label="Submit booking form">
 					Submit
 				</button>

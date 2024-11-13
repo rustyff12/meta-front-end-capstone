@@ -1,21 +1,5 @@
-:root {
-	/* Colors */
-	--clr-primary-1: #495e57;
-	--clr-primary-2: #f4ce14;
-	--clr-secondary-dark: #ee9972;
-	--clr-secondary-light: #fbdabb;
-	--clr-white: #edefee;
-	--clr-black: #333333;
-	--clr-black-light: #333333bf;
-
-	/* Fonts */
-	--ff-main: "Markazi Text", serif;
-	--ff-secondary: "Karla", sans-serif;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 .construction {
-	min-height: 100dvh;
+	min-height: 100svh;
 	background-color: var(--clr-primary-1);
 	color: var(--clr-white);
 	display: flex;

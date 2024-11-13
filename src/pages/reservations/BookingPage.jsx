@@ -48,11 +48,12 @@ export default function BookingPage() {
 	}
 
 	function clearForm() {
+		localStorage.clear();
 		setFormData(initialFormData);
 	}
 
 	return (
-		<div className="form-main">
+		<section className="form-main">
 			<div className="container">
 				<BookingForm
 					formData={formData}
@@ -63,6 +64,6 @@ export default function BookingPage() {
 					submitForm={submitForm}
 				/>
 			</div>
-		</div>
+		</section>
 	);
 }
